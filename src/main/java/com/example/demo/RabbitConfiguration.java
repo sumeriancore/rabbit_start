@@ -38,12 +38,15 @@ public class RabbitConfiguration {
         return new Queue("myQueue");
     }
 
-    @Bean
-    public SimpleMessageListenerContainer messageListenerContainer(){
-        SimpleMessageListenerContainer container = new SimpleMessageListenerContainer();
-        container.setConnectionFactory(connectionFactory());
-        container.setQueueNames("myQueue");
-        container.setMessageListener(message -> logger.info("Received from myQueue : " + new String(message.getBody())));
-        return container;
-    }
+    /*
+        Use RabbitMqListener instead this Bean
+     */
+//    @Bean
+//    public SimpleMessageListenerContainer messageListenerContainer(){
+//        SimpleMessageListenerContainer container = new SimpleMessageListenerContainer();
+//        container.setConnectionFactory(connectionFactory());
+//        container.setQueueNames("myQueue");
+//        container.setMessageListener(message -> logger.info("Received from myQueue : " + new String(message.getBody())));
+//        return container;
+//    }
 }
