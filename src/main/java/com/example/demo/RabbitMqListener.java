@@ -22,4 +22,9 @@ public class RabbitMqListener {
     public void processMyQueue2(String message){
         logger.info("Received from myQueue2 by second listener: {}", message);
     }
+
+    @RabbitListener(queues = "myQueue3")
+    public void processMyQueue3(String message){
+        logger.info("Received from myQueue3 by third listener: {}", message);
+    }
 }
