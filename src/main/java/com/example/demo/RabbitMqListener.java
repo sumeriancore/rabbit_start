@@ -11,20 +11,23 @@ import org.springframework.stereotype.Component;
 @Component
 public class RabbitMqListener {
 
-    private Logger logger = LoggerFactory.getLogger(RabbitMqListener.class);
-
-    @RabbitListener(queues = "myQueue1")
-    public void processMyQueue1(String message){
-        logger.info("Received from myQueue1 by first listener: {}", message);
-    }
-
-    @RabbitListener(queues = "myQueue2")
-    public void processMyQueue2(String message){
-        logger.info("Received from myQueue2 by second listener: {}", message);
-    }
-
-    @RabbitListener(queues = "myQueue3")
-    public void processMyQueue3(String message){
-        logger.info("Received from myQueue3 by third listener: {}", message);
-    }
+    /**
+     * Use such uncommented code for Consumer Service
+     */
+//    private Logger logger = LoggerFactory.getLogger(RabbitMqListener.class);
+//
+//    @RabbitListener(queues = "myQueue1")
+//    public void processMyQueue1(String message){
+//        logger.info("Received from myQueue1 by first listener: {}", message);
+//    }
+//
+//    @RabbitListener(queues = "myQueue2")
+//    public void processMyQueue2(String message){
+//        logger.info("Received from myQueue2 by second listener: {}", message);
+//    }
+//
+//    @RabbitListener(queues = "myQueue3")
+//    public void processMyQueue3(String message){
+//        logger.info("Received from myQueue3 by third listener: {}", message);
+//    }
 }

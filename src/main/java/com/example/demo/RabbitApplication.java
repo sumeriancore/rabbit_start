@@ -1,14 +1,11 @@
 package com.example.demo;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Import;
 
-@EnableAutoConfiguration
-@ComponentScan
 @Import(RabbitConfiguration.class)
+@SpringBootApplication
 public class RabbitApplication {
 
 	public static void main(String[] args) {

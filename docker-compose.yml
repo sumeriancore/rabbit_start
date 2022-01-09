@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    restart: always
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+  orderservice:                        #it is just a name, which will be used only in this file.
+    image: sumeriancore/spring-app-rabbit              #name of the image after dockerfile executes
+    container_name: spring-app  #name of the container created from docker image
+    build:
+      context: .                          #docker file path (. means root directory)
+      dockerfile: Dockerfile              #docker file name
+    ports:
+      - "8081:8080"                       #docker containter port with your os port
+    restart: always
+    environment:
+      - SPRING_RABBITMQ_HOST=rabbitmq
+    links:
+      - rabbitmq
